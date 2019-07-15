@@ -14,8 +14,8 @@ riceprint
 .. |shield5| image:: https://img.shields.io/github/downloads/ssriceboat/riceprint/total.svg?color=blueviolet
    :width: 20%
 .. image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/example.png
-    :width: 480
-    :height: 320
+    :width: 300
+    :height: 240
     :alt: Running the riceprint.py script's test script.
 
 About
