@@ -14,7 +14,7 @@ else:
 
 setup(
    name='riceprint',
-   version='1.4.0',
+   version='1.5.0',
    description='OS-agnostic colored & custom Python console print() functions.',
    long_description=long_description,
    author='Kevin Sacca',

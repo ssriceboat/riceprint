@@ -5,17 +5,23 @@ riceprint
 
 .. |shield1| image:: https://img.shields.io/github/release/ssriceboat/riceprint.svg?color=blue
    :width: 20%
+
 .. |shield2| image:: https://img.shields.io/badge/Python-%3E=3.5-blue.svg?color=e6ac00
    :width: 20%
+
 .. |shield3| image:: https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg
    :width: 24%
+
 .. |shield4| image:: https://img.shields.io/github/license/ssriceboat/riceprint.svg?color=blue
    :width: 20%
+
 .. |shield5| image:: https://img.shields.io/github/downloads/ssriceboat/riceprint/total.svg?color=blueviolet
    :width: 20%
-.. raw:: html
 
-    <img src="https://github.com/ssriceboat/riceprint/raw/master/screenshots/example.png" height="300px">
+|screenshot|
+
+.. |screenshot| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/example.png
+   :width: 50%
 
 About
 =====
