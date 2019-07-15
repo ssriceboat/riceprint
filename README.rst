@@ -29,7 +29,7 @@ print statements. Also contained in this package is a full-featured
 example usage of this package's tprint() function to create a beautiful
 progressbar in the console.
 
-Works on Linux, macOS, Windows.
+Works on Linux, macOS, Windows. For Windows, install colorama. (https://pypi.org/project/colorama/)
 
 License
 =======
