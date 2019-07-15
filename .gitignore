@@ -7,3 +7,5 @@ dist/*
 
 # pycache folders and files
 *pycache*
+
+.DS_Store
