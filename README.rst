@@ -10,7 +10,7 @@ riceprint
    :width: 20%
 
 .. |shield3| image:: https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg
-   :width: 25%
+   :width: 24%
 
 .. |shield4| image:: https://img.shields.io/github/license/ssriceboat/riceprint.svg?color=blue
    :width: 20%
