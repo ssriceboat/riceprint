@@ -1,0 +1,9 @@
+# Pypi package stuff
+*.egg-info/*
+dist/*
+
+# Compiled Python Files
+*.pyc
+
+# pycache folders and files
+*pycache*
