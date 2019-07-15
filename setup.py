@@ -14,7 +14,7 @@ else:
 
 setup(
    name='riceprint',
-   version='1.3.0',
+   version='1.4.0',
    description='OS-agnostic colored & custom Python console print() functions.',
    long_description=long_description,
    author='Kevin Sacca',
@@ -30,8 +30,6 @@ setup(
       'License :: OSI Approved :: MIT License',
 
       'Programming Language :: Python :: 3',
-      'Programming Language :: Python :: 3.3',
-      'Programming Language :: Python :: 3.4',
       'Programming Language :: Python :: 3.5',
       'Programming Language :: Python :: 3.6',
       'Programming Language :: Python :: 3.7',
