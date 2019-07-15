@@ -4,7 +4,7 @@ riceprint
 .. image:: https://img.shields.io/github/release/ssriceboat/riceprint.svg?color=blue
 .. image:: https://img.shields.io/badge/Python-%3E=3.5-blue.svg?color=e6ac00
 .. image:: https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg
-.. image:: https://img.shields.io/github/license/ssriceboat/riceprint.svg
+.. image:: https://img.shields.io/github/license/ssriceboat/riceprint.svg?color=blue
 .. image:: https://img.shields.io/github/downloads/ssriceboat/riceprint/total.svg?color=blueviolet
 
 About
