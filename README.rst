@@ -15,7 +15,7 @@ riceprint
 .. |shield4| image:: https://img.shields.io/github/license/ssriceboat/riceprint.svg?color=blue
    :width: 20%
 
-.. |shield5| image:: https://img.shields.io/github/downloads/ssriceboat/riceprint/total.svg?color=blueviolet
+.. |shield5| image:: https://img.shields.io/pypi/dm/riceprint.svg?color=blueviolet
    :width: 20%
 
 |screenshot|
