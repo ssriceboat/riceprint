@@ -3,9 +3,9 @@ Welcome to riceprint's documentation!
 
 Replacement for Python's built-in print() function that allows for fast colored printing, progress bars, and more. Works on Linux, macOS, Windows.
 
-|screenshot|
+|gifdemo|
 
-.. |screenshot| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/example.png
+.. |gifdemo| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/demo.gif
    :width: 60%
 
 *pprint()* and *tprint()* are the focus of this package.
@@ -47,11 +47,6 @@ Color Codes for pprint() and tprint()
 
 Progress Bar
 ------------
-
-|gifexample|
-
-.. |gifexample| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/demo.gif
-   :width: 60%
 
 The progressbar() function has a lot of customization already, including being able to choose what your progress bar is made up of. Unicode character strings do work, so you can even make a progress bar of emojis or webding-like characters.
 

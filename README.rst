@@ -18,10 +18,10 @@ riceprint
 .. |shield5| image:: https://img.shields.io/pypi/dm/riceprint.svg?color=blueviolet
    :width: 20%
 
-|screenshot|
+|gifdemo|
 
-.. |screenshot| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/example.png
-   :width: 50%
+.. |gifdemo| image:: https://github.com/ssriceboat/riceprint/raw/master/screenshots/demo.gif
+   :width: 60%
 
 About
 =====
