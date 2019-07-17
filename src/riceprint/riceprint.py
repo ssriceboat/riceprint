@@ -191,64 +191,35 @@ class ConsolePrinter:
          return '\033[0;30m%s\033[0m' % str(text)
 
 
-def tprint(msg, color=None, c=None):
-   """
-   "Temporary Print"
-   Prints status of script to console for debugging if hung.
-   This method uses a carriage return at the end of the message such that the
-   next consoleTemp or consolePrint message will overwrite the same line.
-
-   Arguments:
-   msg: str
-      The string line you want to print. This function replaces Python's built-
-      in print() function to simply add color options. Use the same way as
-      print() but you can specify color with the addition arg color='r'.
-   c: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
-   color: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
-   """
-   # First, force msg to be a string
-   msg = str(msg)
-
-   # Next, get intended 'c' or 'color' argument given.
-   choice = list(filter(lambda a: a != None, [color, c]))
-   color = choice[0] if len(choice) > 0 else 'dw'
-
-   # Auto-color messages containing special text. Will be ignored by Windows.
-   color = cp.checkMessage(msg, color)
-
-   # Calculates size of 'empty' buffer for neatness
-   nChars = len(msg)
-   buff = (cp.buff - nChars) * ' '
-
-   # Look up color and convert string to color
-   code = cp.colorLUT(color)
-   convertColor = getattr(cp.palette, code)
-   msg = convertColor(msg)
-
-   # Console output with return carriage so next msg overwrites this line
-   sys.stdout.write('\r%s%s\r' % (msg, buff))
-   sys.stdout.flush()
-
-
 def pprint(msg, color=None, c=None):
    """
    "Permanent Print"
-   Prints status of script to console for debugging if hung.
-   This method uses a newline char at the end of the message automatically,
-   so that the next consoleTemp or consolePrint will always be on a new line.
 
-   Arguments:
+   Prints a string to the console with an optional, (but cool), ANSI color
+   assignment. This method uses a newline char at the end of the message
+   automatically, so that the next tprint() or pprint() will always be on a new
+   line.
+
+   Parameters
+   ----------
+
    msg: str
-      The string line you want to print. This function replaces Python's built-
-      in print() function to simply add color options. Use the same way as
-      print() but you can specify color with the addition arg color='r'.
-   c: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
+      A string line you want to print. This function replaces Python's built-in
+      print() function to simply add color options. You can specify a print
+      color with the additional argument to print(), color='[color-code]'.
    color: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
+      One of the standard ANSI color options:
+
+      [r, g, b, c, m, y, k, w, dr, dg, db, dc, dm, dy, dk, dw]
+   c: str
+      Same as parameter 'color', just an abbreviation. Use whichever you prefer.
+
+   Returns
+   -------
+
+   None
    """
+
    # First, force msg to be a string
    msg = str(msg)
 
@@ -273,10 +244,63 @@ def pprint(msg, color=None, c=None):
    sys.stdout.flush()
 
 
+def tprint(msg, color=None, c=None):
+   """
+   "Temporary Print"
+
+   Prints a string to the console with an optional, (but cool), ANSI color
+   assignment. This method uses a carriage return at the end of the message such
+   that the next tprint() or pprint() message will overwrite the same line.
+
+   Parameters
+   ----------
+
+   msg: str
+      A string line you want to print. This function replaces Python's built-in
+      print() function to simply add color options. You can specify a print
+      color with the additional argument to print(), color='[color-code]'.
+   color: str
+      One of the standard ANSI color options:
+
+      [r, g, b, c, m, y, k, w, dr, dg, db, dc, dm, dy, dk, dw]
+   c: str
+      Same as parameter 'color', just an abbreviation. Use whichever you prefer.
+
+   Returns
+   -------
+
+   None
+   """
+
+   # First, force msg to be a string
+   msg = str(msg)
+
+   # Next, get intended 'c' or 'color' argument given.
+   choice = list(filter(lambda a: a != None, [color, c]))
+   color = choice[0] if len(choice) > 0 else 'dw'
+
+   # Auto-color messages containing special text. Will be ignored by Windows.
+   color = cp.checkMessage(msg, color)
+
+   # Calculates size of 'empty' buffer for neatness
+   nChars = len(msg)
+   buff = (cp.buff - nChars) * ' '
+
+   # Look up color and convert string to color
+   code = cp.colorLUT(color)
+   convertColor = getattr(cp.palette, code)
+   msg = convertColor(msg)
+
+   # Console output with return carriage so next msg overwrites this line
+   sys.stdout.write('\r%s%s\r' % (msg, buff))
+   sys.stdout.flush()
+
+
 def progressbar(done, total, c=None, color=None, char='=', blank=' ',
                width=TERM_SIZE, lend='[', rend=']', keep=False):
    """
    "Progress Bar"
+
    Takes advantage of tprint's lack of a newline character to repeatedly print
    over the same line in the console/terminal. This will give the effect of a
    moving/updating progress bar.
@@ -285,20 +309,22 @@ def progressbar(done, total, c=None, color=None, char='=', blank=' ',
    function, the progress bar will be interrupted and could lead to messy
    output, so keep that in mind.
 
-   Arguments:
+   Parameters
+   ----------
+
    done: int
       From a scale of zero to 'total' where your current progress is at. If you
       are iterating over a range, the iterated value could be this argument.
    total: int
       The end value of the progress bar, when process is complete. If you are
       iterating over a range, the max value of the range could be this argument.
-   c: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
    color: str
-      One of the ConsolePrinter color options. 'r,g,b,c,m,y,k,w,...'
+      One of the standard ANSI color options. 'r,g,b,c,m,y,k,w,...'
+   c: str
+      Same as parameter 'color', just an abbreviation. Use whichever you prefer.
    char: str
-      The character you want the progress portion of the bar to be. Default is
-      a '=' character. Unicode character codes work. Try char='\u2587'.
+      The character you want the progress portion of the bar to be. Default is a
+      '=' character. Unicode character codes work. Try char='[backslash]u2587'.
    blank: str
       The character you want the unfinished portion of the bar to be. Default is
       a blank space character.
@@ -316,7 +342,13 @@ def progressbar(done, total, c=None, color=None, char='=', blank=' ',
       (uses a newline character using pprint) or not. If you want the completed
       progress bar to not be overwritten, the last time you call progressbar()
       in your loop, you should give use keep=True.
+
+   Returns
+   -------
+
+   None
    """
+
    # Do some input checking with absolute values, limits, and color choices.
    done, total, width = abs(done), abs(total), abs(width)
    if width + 6 > TERM_SIZE:
