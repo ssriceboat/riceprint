@@ -14,12 +14,13 @@ else:
 
 setup(
    name='riceprint',
-   version='1.5.4',
+   version='1.5.5',
    description='OS-agnostic colored & custom Python console print() functions.',
    long_description=long_description,
    author='Kevin Sacca',
    author_email='ssriceboat@gmail.com',
    url='https://github.com/ssriceboat/riceprint',
+   project_url='Documentation, https://riceprint.readthedocs.io/en/latest/',
    license='MIT',
    classifiers=[
       'Development Status :: 4 - Beta',
