@@ -21,7 +21,7 @@ setup(
    author_email='ssriceboat@gmail.com',
    url='https://github.com/ssriceboat/riceprint',
    project_urls={'Documentation': 'https://riceprint.readthedocs.io/en/latest/',
-   }
+   },
    license='MIT',
    classifiers=[
       'Development Status :: 4 - Beta',
